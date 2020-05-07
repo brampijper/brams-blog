@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Bram's thoughts`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Bram Pijper`,
+      summary: `who lives and works in Amsterdam while taking care of the planet.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      github: `brampijper`,
     },
   },
   plugins: [
@@ -74,6 +74,17 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-source-unsplash`,
+      options: {
+        appId: `12345678`,
+        collections: [
+          `098765`
+        ],
+        // optional: will only get page 1, so increase this count to include > 10 photos
+        perPage: `100`
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

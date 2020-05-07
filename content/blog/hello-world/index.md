@@ -1,22 +1,20 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: "On getting motivated..."
+date: "2020-05-05T22:12:03.284Z"
+description: "The 5 minute rule"
 ---
 
-This is my first post on my new fake blog! How exciting!
+![clock](./clock.jpg)
 
-I'm sure I'll write a lot more interesting things in the future.
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@oceanng?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Ocean Ng"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Ocean Ng</span></a>
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+Getting motivated is sometimes a tricky businuess, but remember you will only achieve motivation once you start doing something.
+That's why the 5 minute rule is important. Make your brain stop thinking and just start. Are you still not feeling the sense of motivation after 5 minutes? Then just stop and focus on something else. 
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+If you wait until you get motivated you're not in control of your own actions. It could take hours, days even weeks before you have the urge of motivation for that one thing you've been postponing.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+As a personal example I've been reluctant to build this blog with Gatsby and React for several weeks now. It's always there in the back of my mind, but I keep letting myself get distracted with other (not-so) important stuff. By applying the 5 minutes rule I'm now succesfully writing my first blog post. 
+
+Will this always work you may ask? Most definitely not, but even if you try applying the 5 minute rule and you fail 9 times but on the 10th try you succeed that's already a huge accomplishment isn't it?
+
+I'll be writing more posts like these in the future. Any feedback is welcome :-)
