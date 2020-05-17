@@ -1,5 +1,5 @@
 ---
-title: "on doing grocery shopping..."
+title: "On doing grocery shopping..."
 date: "2020-05-16T22:12:03.284Z"
 description: "without spending too much time and money"
 ---
