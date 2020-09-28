@@ -1,0 +1,52 @@
+.nav {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:3;
+    width: 100%;
+}
+
+.nav-container {
+    height: 160px;
+    padding: 2rem;
+    margin: auto;
+    max-width: 800px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+h3 {
+    margin:0;
+    padding:0;
+}
+
+.nav .links a, .brand a {
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color:black;
+    box-shadow:none;
+}
+
+.nav .brand .text {
+    font-size: 1.3rem;
+}
+
+.nav .links a {
+    font-size: 1rem;
+    margin: 0 .5rem;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.nav .links a:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.favicon {
+    margin-right: 1rem;
+}
+
+.brand {
+    cursor:pointer;
+}

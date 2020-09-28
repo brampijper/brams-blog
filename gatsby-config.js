@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Bram's thoughts`,
+    title: `Bram Pijper`,
     author: {
       name: `Bram Pijper`,
       summary: `who lives and works in Amsterdam while taking care of the planet.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog about small live improvements regarding time management, motivation and finance.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       github: `brampijper`,
