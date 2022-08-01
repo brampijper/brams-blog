@@ -2,9 +2,9 @@
 title: "On spending time in nature..."
 date: "2020-05-09T20:38:03.284Z"
 description: "without your phone"
----
+featuredImage: { src: "./nature.jpg", alt: "nature" }
 
-![nature](./nature.jpg)
+---
 
 Since spring has arrived in Amsterdam the weather has been absolutely amazing. I wish there was a bit more rain for all the crops (sorry farmers), but with the sun out until late, it's a great opportunity to take a walk individually and appreciate the feeling of springtime. Why you may ask?
 
