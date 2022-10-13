@@ -71,7 +71,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-
+    {
+      resolve: `gatsby-source-unsplash`,
+      options: {
+        client_id: `123456`,
+        // optional: will only get page 1, so increase this count to include > 10 photos
+        perPage: `1`
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
