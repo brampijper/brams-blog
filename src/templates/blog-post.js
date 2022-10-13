@@ -12,6 +12,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const featuredImg = getImage(post.frontmatter.featuredImage.src)
+
+  //unsplash
+  const unsplashID = post.frontmatter.unsplashPhotoID;
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -83,31 +87,46 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+query BlogPostBySlugAndPhotoQuery($slug: String!, ) {
+   site{
+     siteMetadata {
+       title
+     }
+   }
+   markdownRemark(fields: { slug: { eq: $slug } }) {
+     id
+     excerpt(pruneLength: 160)
+     html
+     frontmatter {
+       title
+       date(formatString: "MMMM DD, YYYY")
+       description
+       featuredImage {
+         alt
+         src {
+           childImageSharp {
+             gatsbyImageData(
+               width:600
+             )
+           }
+         }
+       }
+     }
+   }
+   unsplashPhoto(id: { eq: unsplashID }) {
+   id
+   description
+    urls {
+      full
+      regular
+      small
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-        featuredImage {
-          alt
-          src {
-            childImageSharp {
-              gatsbyImageData(
-                width:600
-              )
-            }
-          }
-        }
+    user {
+      name
+      links {
+        html
       }
     }
   }
+}
 `
