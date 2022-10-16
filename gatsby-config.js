@@ -3,7 +3,7 @@ module.exports = {
     title: `Bram's thoughts`,
     author: {
       name: `Bram Pijper`,
-      summary: `who lives and works in Amsterdam while taking care of the planet.`,
+      summary: `who lives in Brussels, works in web development, writes about technology + health and loves life.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
