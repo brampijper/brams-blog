@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -18,39 +17,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article
+        className="blog-post"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 30,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
+          <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <GatsbyImage image={featuredImg} alt={post.frontmatter.featuredImage.alt} />
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <p>{post.frontmatter.date}</p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          itemProp="articleBody"
         />
+        <hr/>
         <footer>
           <Bio />
         </footer>
       </article>
-
-      <nav>
+      <nav className="blog-post-nav">
         <ul
           style={{
             display: `flex`,
