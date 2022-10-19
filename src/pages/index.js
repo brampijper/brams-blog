@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -12,28 +11,27 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <h2>
-                <Link to={node.fields.slug}>
-                  <span itemProp="headline">{title}</span>
-                </Link>
-              </h2>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-                itemProp="description"
-              />
-            </section>
-          </article>
+          <Link className="blog-posts-links" to={node.fields.slug}>
+            <article  className="blog-posts" key={node.fields.slug}>
+              <header>
+                <h2>
+                    <span itemProp="headline">{title}</span>
+                </h2>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                  itemProp="description"
+                />
+              </section>
+            </article>
+          </Link>
         )
       })}
     </Layout>

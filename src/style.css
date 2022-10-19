@@ -81,6 +81,7 @@
     font-family: var(--font-body);
     font-size: var(--fontSize-1);
     color: var(--color-text);
+    background-color: var(--color-accent);
   }
   
   footer {
@@ -125,6 +126,7 @@
   
   h2 {
     font-size: var(--fontSize-5);
+    margin-top: var(--spacing-5);
   }
   
   h3 {
@@ -309,6 +311,18 @@
     max-width: 100px;
     max-height: 100px;
     border-radius: 100%;
+  }
+
+  .blog-posts-links {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .blog-posts {
+    background-color: white;
+    border-radius: 1rem;
+    padding: var(--spacing-1) 0 var(--spacing-1) var(--spacing-6);
+    margin-top: 1.5rem;
   }
   
   .blog-post header h1 {
