@@ -17,7 +17,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-prismjs`,
     `gatsby-remark-copy-linked-files`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
