@@ -13,7 +13,6 @@
     "gatsby-plugin-image": "^2.19.0",
     "gatsby-plugin-manifest": "^4.19.0",
     "gatsby-plugin-offline": "^5.19.0",
-    "gatsby-plugin-react-helmet": "^5.19.0",
     "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-plugin-typography": "^4.19.0",
     "gatsby-remark-copy-linked-files": "^5.19.0",
@@ -26,7 +25,6 @@
     "prismjs": "^1.28.0",
     "react": "^18.0.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-typography": "^0.16.20",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
