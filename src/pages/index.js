@@ -7,17 +7,20 @@ import Categories from "../components/Categories"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+
+  //state
+  const [posts, setPosts] = React.useState(data.allMarkdownRemark.edges); 
+  const [categories, setCategories] = React.useState([]);
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Categories posts={posts} />
+      <Categories posts={posts} categories={categories} setCategories={setCategories} />
       <Seo title="All posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <Link className="blog-posts-links" to={node.fields.slug}>
-            <article  className="blog-posts" key={node.fields.slug}>
+          <Link className="blog-posts-links" key={node.fields.slug} to={node.fields.slug}>
+            <article  className="blog-posts">
               <header>
                 <h2>
                     <span itemProp="headline">{title}</span>
