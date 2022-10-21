@@ -1,30 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 /**
- * TODO: It feels in-efficient to call flatmap 2 times. Is there a way to improve this code?
  * TODO: Currently the category buttons are not firing of an onClick.
  */
 
-export default function Categories({ posts, categories, setCategories}) {
+const Categories = () => {
+    const data = useStaticQuery(graphql`query categories { 
+        allMarkdownRemark {
+            nodes {
+                frontmatter {
+                categories
+                }
+            }
+        }
+    }
+    `)
+
+    const posts = data.allMarkdownRemark.nodes
+    const [categories, setCategories] = useState([]);
     
     useEffect(() => {
-        setCategories( (prevState) => { //prevState = []
-            return [
-                ...prevState, 
-                posts
-                .map (item => item.node.frontmatter.categories)
+        setCategories( () => {
+            return posts.map (item  => item.frontmatter.categories)
                 .filter(item => item) //blogposts without a category are filtered out.
                 .flatMap(item => item) //merge arrays into a single array.
-            ]
-        });
+        })
     }, [])
 
     const categoryButtons = categories
-        .flatMap( category => category)
         .map( category => {
-            console.log(category)
             return (
-                <button key={category}>
+                <button data-index={category} key={category}>
                     {category}
                 </button>
             )
@@ -35,3 +42,5 @@ export default function Categories({ posts, categories, setCategories}) {
         </div>
     )
 }
+
+export default Categories;
