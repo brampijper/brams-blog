@@ -1,32 +1,18 @@
 import React, { useEffect, useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
-/**
- * TODO: Currently the category buttons are not firing of an onClick.
- */
+const Categories = ({ posts }) => {
 
-const Categories = () => {
-    const data = useStaticQuery(graphql`query categories { 
-        allMarkdownRemark {
-            nodes {
-                frontmatter {
-                categories
-                }
-            }
-        }
-    }
-    `)
-
-    const posts = data.allMarkdownRemark.nodes
     const [categories, setCategories] = useState([]);
+
+    const mapAndFilterCategories = 
+    posts
+        .map (post  => post.categories)
+        .filter(item => item) //blogposts without a category are filtered out.
+        .flatMap(item => item) //merge arrays into a single array.
     
     useEffect(() => {
-        setCategories( () => {
-            return posts.map (item  => item.frontmatter.categories)
-                .filter(item => item) //blogposts without a category are filtered out.
-                .flatMap(item => item) //merge arrays into a single array.
-        })
-    }, [])
+        setCategories(mapAndFilterCategories)
+    }, [posts])
 
     const categoryButtons = categories
         .map( category => {
