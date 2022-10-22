@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -6,31 +6,48 @@ import Seo from "../components/seo"
 import Categories from "../components/Categories"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.title; 
+  
+  const [posts, setPosts] = useState([]); 
 
-  //state
-  const [posts, setPosts] = React.useState(data.allMarkdownRemark.edges); 
-  const [categories, setCategories] = React.useState([]);
+  const formatPosts = (posts) => {
+    const postList = posts.allMarkdownRemark.edges
+      .map( ({node}) => {
+        const { frontmatter, fields, excerpt } = node;
+        return {
+          title: frontmatter.title,
+          slug: fields.slug,
+          date: frontmatter.date,
+          description: frontmatter.description,
+          excerpt,
+          categories: frontmatter.categories
+        }
+      })
+    setPosts(postList);
+  }
+
+  useEffect( () => {
+    formatPosts(data);
+  }, [data]);
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Categories posts={posts} categories={categories} setCategories={setCategories} />
+      <Categories posts={posts} />
       <Seo title="All posts" />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+      {posts.map((post) => {
         return (
-          <Link className="blog-posts-links" key={node.fields.slug} to={node.fields.slug}>
+          <Link className="blog-posts-links" key={post.slug} to={post.slug}>
             <article  className="blog-posts">
               <header>
                 <h2>
-                    <span itemProp="headline">{title}</span>
+                    <span itemProp="headline">{post.title}</span>
                 </h2>
-                <small>{node.frontmatter.date}</small>
+                <small>{post.date}</small>
               </header>
               <section>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
+                    __html: post.description || post.excerpt,
                   }}
                   itemProp="description"
                 />
