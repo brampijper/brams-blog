@@ -1,61 +1,75 @@
 import React, { useState, useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Categories from "../components/Categories"
+import Category from "../components/BlogPostCategory"
+import BlogPost from "../components/BlogPost"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title; 
-  
-  const [posts, setPosts] = useState([]); 
+  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState(["show all"]);
+  const [filteredPosts, setFilteredPostList] = useState([]);
+  const [hasFiltered, setHasFiltered] = useState(false);
 
-  const formatPosts = (posts) => {
-    const postList = posts.allMarkdownRemark.edges
-      .map( ({node}) => {
-        const { frontmatter, fields, excerpt } = node;
-        return {
-          title: frontmatter.title,
-          slug: fields.slug,
-          date: frontmatter.date,
-          description: frontmatter.description,
-          excerpt,
-          categories: frontmatter.categories
-        }
-      })
-    setPosts(postList);
+  useEffect(() => {
+    function formatPosts() {
+      const posts = data.allMarkdownRemark.edges.map( ({node}) => {
+          const { frontmatter, fields, excerpt } = node;
+          return {
+            title: frontmatter.title,
+            slug: fields.slug,
+            date: frontmatter.date,
+            description: frontmatter.description,
+            excerpt,
+            categories: frontmatter.categories
+          }
+        })
+        setPosts(posts)
+      }
+    formatPosts();
+  }, [data])
+
+  useEffect(() => {
+    function mapAndFilterCategories () {
+      const categories = posts.map (post => post.categories)
+        .filter(item => item) //blogposts without a category are filtered out.
+        .flatMap(item => item); //merge arrays into a single array.
+        setCategories( (prevState) => prevState.concat(categories))
+    }
+    mapAndFilterCategories();
+
+  }, [posts])
+
+  function filter(category) {
+    if(category === "show all") {
+      setHasFiltered(false)
+      return;
+    }
+
+    const filteredPosts = posts.filter( ({ categories }) => (
+        categories && categories.includes(category)
+    ))
+    setFilteredPostList(filteredPosts)
+    setHasFiltered(true);
   }
 
-  useEffect( () => {
-    formatPosts(data);
-  }, [data]);
+  const categoryButtons = categories.map(category => (
+    <Category 
+      key={category}  
+      category={category}
+      filter={ () => filter(category) }
+    />
+  ))
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Categories posts={posts} />
       <Seo title="All posts" />
-      {posts.map((post) => {
-        return (
-          <Link className="blog-posts-links" key={post.slug} to={post.slug}>
-            <article  className="blog-posts">
-              <header>
-                <h2>
-                    <span itemProp="headline">{post.title}</span>
-                </h2>
-                <small>{post.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: post.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
-              </section>
-            </article>
-          </Link>
-        )
-      })}
+      {categoryButtons}
+      <BlogPost 
+        posts={hasFiltered ? filteredPosts : posts}
+      />
     </Layout>
   )
 }
