@@ -3,6 +3,7 @@ title: "An update on this blog"
 date: "2022-10-17T22:12:03.284Z"
 description: "A stronger comeback with less effort."
 featuredImage: { src: "./break.jpg", alt: "a break in the mountains" }
+categories: ["react", "2022"]
 ---
 
 Photo by <a href="https://unsplash.com/@miteneva?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Teneva</a> on <a href="https://unsplash.com/s/photos/break?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

@@ -1,39 +1,75 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Category from "../components/BlogPostCategory"
+import BlogPost from "../components/BlogPost"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title; 
+  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState(["show all"]);
+  const [filteredPosts, setFilteredPostList] = useState([]);
+  const [hasFiltered, setHasFiltered] = useState(false);
+
+  useEffect(() => {
+    function formatPosts() {
+      const posts = data.allMarkdownRemark.edges.map( ({node}) => {
+          const { frontmatter, fields, excerpt } = node;
+          return {
+            title: frontmatter.title,
+            slug: fields.slug,
+            date: frontmatter.date,
+            description: frontmatter.description,
+            excerpt,
+            categories: frontmatter.categories
+          }
+        })
+        setPosts(posts)
+      }
+    formatPosts();
+  }, [data])
+
+  useEffect(() => {
+    function mapAndFilterCategories () {
+      const categories = posts.map (post => post.categories)
+        .filter(item => item) //blogposts without a category are filtered out.
+        .flatMap(item => item); //merge arrays into a single array.
+        setCategories( (prevState) => prevState.concat(categories))
+    }
+    mapAndFilterCategories();
+
+  }, [posts])
+
+  function filter(category) {
+    if(category === "show all") {
+      setHasFiltered(false)
+      return;
+    }
+
+    const filteredPosts = posts.filter( ({ categories }) => (
+        categories && categories.includes(category)
+    ))
+    setFilteredPostList(filteredPosts)
+    setHasFiltered(true);
+  }
+
+  const categoryButtons = categories.map(category => (
+    <Category 
+      key={category}  
+      category={category}
+      filter={ () => filter(category) }
+    />
+  ))
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <Link className="blog-posts-links" to={node.fields.slug}>
-            <article  className="blog-posts" key={node.fields.slug}>
-              <header>
-                <h2>
-                    <span itemProp="headline">{title}</span>
-                </h2>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                  itemProp="description"
-                />
-              </section>
-            </article>
-          </Link>
-        )
-      })}
+      {categoryButtons}
+      <BlogPost 
+        posts={hasFiltered ? filteredPosts : posts}
+      />
     </Layout>
   )
 }
@@ -58,6 +94,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            categories
           }
         }
       }
