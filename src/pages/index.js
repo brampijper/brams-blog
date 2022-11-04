@@ -33,10 +33,14 @@ const BlogIndex = ({ data, location }) => {
 
   useEffect(() => {
     function mapAndFilterCategories () {
-      const categories = posts.map (post => post.categories)
-        .filter(item => item) //blogposts without a category are filtered out.
-        .flatMap(item => item); //merge arrays into a single array.
-        setCategories( (prevState) => prevState.concat(categories))
+    
+    const filteredCategories = posts.reduce( (acc, val) => { 
+      if (val.categories) {
+          return acc.concat(val.categories);
+      }
+      return [...new Set(acc)]; // return only unique categories.
+    }, [])
+    setCategories( (prevState) => [...prevState, ...filteredCategories]); //spread old and new categories into state.
     }
     mapAndFilterCategories();
 
