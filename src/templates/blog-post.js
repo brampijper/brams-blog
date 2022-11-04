@@ -11,6 +11,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const featuredImg = getImage(post.frontmatter.featuredImage.src)
+  
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
