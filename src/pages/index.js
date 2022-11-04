@@ -70,7 +70,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      {categoryButtons}
+      <section className="category-container">
+        {categoryButtons}
+      </section>
       <BlogPost 
         posts={hasFiltered ? filteredPosts : posts}
       />
