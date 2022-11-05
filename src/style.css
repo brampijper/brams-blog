@@ -344,7 +344,8 @@
 
   .category-container {
     display:flex;
-    column-gap: .4rem;
+    flex-wrap: wrap;
+    gap: .4rem;
     font-size: var(--fontSize-0);
   }
 
@@ -361,6 +362,14 @@
     background-color:#1a202c;
   }
   
+  /* code block titles margin */
+  h5 {
+    margin:0;
+  }
+
+  pre {
+    margin-top:.5rem;
+  }
   /* Media queries */
   
   @media (max-width: 42rem) {
