@@ -40,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
       }
       return [...new Set(acc)]; // return only unique categories.
     }, [])
-    setCategories( (prevState) => [...prevState, ...filteredCategories]); //spread old and new categories into state.
+    setCategories( (prevState) => [...prevState, ...[...new Set(filteredCategories)]]); //spread old and new categories into state.
     }
     mapAndFilterCategories();
 
