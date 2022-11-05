@@ -3,6 +3,7 @@ title: "On spending time in nature..."
 date: "2020-05-09T20:38:03.284Z"
 description: "without your phone"
 featuredImage: { src: "./nature.jpg", alt: "nature" }
+categories: ["disctraction", "2020"]
 
 ---
 
