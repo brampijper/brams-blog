@@ -321,8 +321,22 @@
   .blog-posts {
     background-color: white;
     border-radius: 1rem;
-    padding: var(--spacing-1) 0 var(--spacing-1) var(--spacing-6);
+    padding: var(--spacing-2) var(--spacing-6) var(--spacing-1) var(--spacing-6);
     margin-top: 1.5rem;
+  }
+
+  .blog-posts header {
+    display:flex;
+    flex-direction:column;
+  }
+
+  .blog-post-date {
+    align-self:flex-end;
+    position: absolute;
+  }
+
+  .blog-posts h2 {
+    margin-top: var(--spacing-2);
   }
   
   .blog-post header h1 {

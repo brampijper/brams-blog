@@ -7,10 +7,10 @@ export default function BlogPost({posts}) {
             <Link className="blog-posts-links" key={post.slug} to={post.slug}>
                 <article  className="blog-posts">
                 <header>
+                    <small className="blog-post-date">{post.date}</small>
                     <h2>
                         <span itemProp="headline">{post.title}</span>
                     </h2>
-                    <small>{post.date}</small>
                 </header>
                 <section>
                     <p
