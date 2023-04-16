@@ -5,8 +5,8 @@ module.exports = {
       name: `Bram Pijper`,
       summary: `who lives in Oslo, works in web development, writes about technology and health and enjoys life.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A blog about technology and health.`,
+    siteUrl: `https://focused-galileo-c3ee18.netlify.app/`,
     social: {
       github: `brampijper`,
     },
