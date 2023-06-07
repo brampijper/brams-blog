@@ -1,11 +1,23 @@
-import React from "react"
+import React from 'react'
+import BlogPostCard from './BlogPostCard'
 
-const Category = ({filter, category}) => {
-    return (
-        <button onClick={filter} className="category-button" >
-            {category}
-        </button>
+const BlogPostCategory = ({category, posts}) => {
+
+  const blogPosts = posts.map( 
+    post => (
+      <BlogPostCard
+        key={post.slug} 
+        post={post} 
+      />
     )
+  )
+
+  return (
+    <div>
+      <h3>{category}</h3>
+        {blogPosts}
+    </div>
+  )
 }
 
-export default Category;
+export default BlogPostCategory;
