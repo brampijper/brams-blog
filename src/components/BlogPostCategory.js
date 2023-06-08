@@ -1,7 +1,7 @@
 import React from 'react'
 import BlogPostCard from './BlogPostCard'
 
-const BlogPostCategory = ({category, posts}) => {
+const BlogPostCategory = ({title, posts}) => {
 
   const blogPosts = posts.map( 
     post => (
@@ -14,7 +14,7 @@ const BlogPostCategory = ({category, posts}) => {
 
   return (
     <div>
-      <h3>{category}</h3>
+      <h3>{title}</h3>
         {blogPosts}
     </div>
   )
