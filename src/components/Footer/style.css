@@ -1,0 +1,4 @@
+footer {
+    padding: var(--spacing-6) var(--spacing-0);
+    align-self:flex-end;
+  }

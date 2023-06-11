@@ -3,7 +3,7 @@ title: "On doing grocery shopping..."
 date: "2020-05-16T22:12:03.284Z"
 description: "without spending too much time and money"
 featuredImage: { src: "./supermarket.jpg", alt: "supermarket" }
-categories: ["time management", "2020"]
+topics: ["time management", "2020"]
 ---
 
 Photo by:

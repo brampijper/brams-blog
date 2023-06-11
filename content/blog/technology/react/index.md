@@ -3,7 +3,7 @@ title: "On learning React"
 date: "2022-10-24T20:12:03.284Z"
 description: "Composability and JSX with React"
 featuredImage: { src: "./react-logo.png", alt: "React logo" }
-categories: ["react", "2022"]
+topics: ["react", "2022"]
 ---
 
 React. A framework for building fast and clean user interfaces. The first composable framework known by most developers.

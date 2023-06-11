@@ -2,9 +2,10 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Bio from "../components/bio"
+import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import "./blog-post.css";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -38,15 +39,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
       <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -57,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title} →  
               </Link>
             )}
           </li>
