@@ -1,18 +1,25 @@
 export default function formatBlogPosts({allMarkdownRemark}) {
-    const { edges } = allMarkdownRemark;
+    const { edges } = allMarkdownRemark
 
     return edges.map( ({node}) => {
-        const { frontmatter, fields, excerpt } = node;
-        const { title, date, description, category, topics } = frontmatter
+        const { frontmatter, fields, excerpt } = node
+        const { title, date, description, topics } = frontmatter
+        const { slug } = fields
+
+        const category = extractCategory(slug)
         
         return {
             title,
-            slug: fields.slug,
+            slug,
             date,
             description,
             excerpt,
-            category,
-            topics
+            topics,
+            category
         }
     })
+
+    function extractCategory(str) {
+        return str.split('/')[1]
+    }
 }

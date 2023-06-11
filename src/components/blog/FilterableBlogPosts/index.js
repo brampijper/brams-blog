@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import formatBlogPosts from '../helpers/formatBlogPosts';
+import React, { useState } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import formatBlogPosts from "../../../helpers/formatBlogPosts"
 
-import SearchBar from './SearchBar';
-import BlogPosts from "./BlogPosts"
+import SearchBar from "../../SearchBar/"
+import BlogPostCategories from "../BlogPostCategories"
+
+import "./style.css"
 
 const getData = graphql`
     query {
@@ -18,7 +20,6 @@ const getData = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         title
                         description
-                        category
                         topics
                     }
                 }
@@ -32,8 +33,8 @@ const FilterableBlogPosts = () => {
     const formattedData = formatBlogPosts(data)
 
     const [posts, setPosts] = useState(formattedData)
-    const [filteredPosts, setFilteredPosts] = useState(formattedData)
-    const [searchInput, setSearchInput] = useState('')
+    const [filteredPosts, setFilteredPosts] = useState([])
+    const [searchInput, setSearchInput] = useState("")
 
     const handleSearchChange = (event) => {
         const value = event.target.value.toLowerCase()
@@ -47,16 +48,18 @@ const FilterableBlogPosts = () => {
         )
         setFilteredPosts(searchResults)
     }
-    
+        
     return (
-        <div>
-            <SearchBar value={searchInput} onChange={handleSearchChange} />
+        <div className="wrap-content">
+            <SearchBar 
+                value={searchInput} 
+                onChange={handleSearchChange} 
+            />
 
-            <div className="container">
-                <BlogPosts
-                    posts={searchInput ? filteredPosts : posts}
-                />
-            </div>
+            <BlogPostCategories
+                posts={searchInput ? filteredPosts : posts}
+            />
+            
         </div>
     )
 }

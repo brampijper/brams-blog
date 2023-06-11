@@ -1,0 +1,19 @@
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+}
+
+input {
+    width: 100%;
+    max-width: var(--maxWidth-4xl);
+    padding: var(--spacing-3);
+    border-radius: var(--spacing-20);
+    border: none;
+    background-color: var(--input-color);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--color-accent);
+    opacity: 1; /* Firefox */
+  }
