@@ -2,11 +2,9 @@
 title: "About dopamine & motivation"
 date: "2023-06-06T16:12:03.284Z"
 description: "Dopamine is great until it's not"
-featuredImage: { src: "./chocolate.jpg", alt: "chocolate" }
+featuredImage: { src: "./chocolate.jpg", alt: "chocolate", unsplashName: "@tetiana_bykovets" }
 categories: ["motivation", "2023"]
 ---
-
-Photo by <a href="https://unsplash.com/@tetiana_bykovets?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tetiana Bykovets</a> on <a href="https://unsplash.com/photos/L3q11Xtvsfs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 #### Love it, hate it!
 

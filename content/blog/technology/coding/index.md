@@ -2,18 +2,16 @@
 title: "An update on this blog"
 date: "2022-12-17T22:12:03.284Z"
 description: "Improvements accros the board!"
-featuredImage: { src: "./break.jpg", alt: "a break in the mountains" }
+featuredImage: { src: "./break.jpg", alt: "a break in the mountains", unsplashName: "@miteneva" }
 topics: ["react", "update", "authentic", "coding"]
 ---
-
-Photo by <a href="https://unsplash.com/@miteneva?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Teneva</a> on <a href="https://unsplash.com/s/photos/break?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 #### Coming back 
  Learning how to program has taught me a great deal about myself, the world and others. The itch of life-long learning started itching again, so after a deep dive into my childhood, the many layers of my unconsciousness I bubbled back to the surface with fresh inspiration.
 
 That inspiration means my vision for this blog has evolved: I want it to be more **authentic** and there will be blog posts that fit into 2 categories:
-   1. **Technology**
-   2. **Health**
+**technology** and **health**.
+
 Both are equally important for me. Without a good mental (health) state I enjoy life less and become stuck. On the other hand web development has taught me the joys of:
 - Continuous learning,
 - To become a problem fixer,

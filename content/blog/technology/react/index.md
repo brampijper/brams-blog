@@ -6,7 +6,8 @@ featuredImage: { src: "./react-logo.png", alt: "React logo" }
 topics: ["react", "2022"]
 ---
 
-React. A framework for building fast and clean user interfaces. The first composable framework known by most developers.
+### React
+A framework for building fast and clean user interfaces. The first composable framework known by most developers.
 Based on Javascript and backed by Facebook. But what is composable exactly? and why did I decide to learn it now?
 
 ### Composability
@@ -61,7 +62,7 @@ Of course React transpiles these jsx elements back into DOM elements before
 rendering your application. 
 
 One of the questions I had when I started learning React was: why would I want to write in JSX?
-##### The benefit
+#### The benefit
 Well, it turns out that React is using a component based structuring. Since display logic and markup are tightly coupled you can write both markup and logic in the same file. The days of seperate .html and .js files are over. These so called components are React's way to separate from concern.
 
 We'll dive deeper into components in an upcoming blog post, but hopefully this was a `light` introduction into the world of React.
