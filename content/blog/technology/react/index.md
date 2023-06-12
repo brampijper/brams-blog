@@ -36,13 +36,20 @@ console.log(h1) --> <h1 class="header">
 
 ##### In JSX:    
 ```jsx
-const elem = <h1 className="header"> Hello blog reader</h1>
+const elem = 
+<h1 className="header"> 
+    Hello blog reader
+</h1>
+
 console.log(elem) --> 
 {   
     type: "h1", 
     key: null, 
     ref: null, 
-    props: {className: "header", children: "Hello blog reader"}, 
+    props: {
+        className: "header", 
+        children: "Hello blog reader"
+    }, 
     _owner: null, _store: {}
 }
 ```
