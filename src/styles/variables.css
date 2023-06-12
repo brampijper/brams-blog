@@ -14,7 +14,8 @@
     --maxWidth-6xl: 72rem;
     --maxWidth-full: "100%";
     --maxWidth-wrapper: var(--maxWidth-6xl);
-    --maxWidth-blog-post: var(--maxWidth-2xl);
+    --maxWidth-mobile-blog-post: var(--maxWidth-2xl);
+    --maxWidth-desktop-blog-post: var(--maxWidth-5xl);
     --spacing-px: "1px";
     --spacing-0: 0;
     --spacing-1: 0.25rem;

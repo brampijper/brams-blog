@@ -5,39 +5,60 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import UnsplashCredit from "../components/UnsplashCredit"
 import "./blog-post.css";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+  const { title, date, description, featuredImage } = post.frontmatter
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const featuredImg = getImage(post.frontmatter.featuredImage.src)
-  
+
+  const unsplashName = featuredImage.unsplashName || null
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={title}
+        description={description || post.excerpt}
       />
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <GatsbyImage image={featuredImg} alt={post.frontmatter.featuredImage.alt} />
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr/>
-        <footer>
+          <header>
+            <h1 itemProp="headline">{title}</h1>
+            <p>{date}</p>
+          </header>
+
+          <section className="blog-post-image">
+            <GatsbyImage 
+              image={featuredImg} 
+              alt={featuredImage.alt}
+              className="image-wrap"
+            />
+            { unsplashName && (
+                <UnsplashCredit 
+                  unsplashName={featuredImage.unsplashName }
+                />
+              )
+            }
+          </section>
+        
+          <section
+            className="blog-post-body"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+
+        <footer className="footer">
           <Bio />
         </footer>
+
       </article>
+
       <nav className="blog-post-nav">
         <ul>
           <li>
@@ -79,11 +100,10 @@ export const pageQuery = graphql`
         description
         featuredImage {
           alt
+          unsplashName
           src {
             childImageSharp {
               gatsbyImageData(
-                layout: CONSTRAINED
-                height: 400
                 placeholder: DOMINANT_COLOR
               )
             }
