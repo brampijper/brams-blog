@@ -11,3 +11,6 @@ import "./src/styles/default.css"
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
+
+// tailwind styles
+import './src/styles/global.css'

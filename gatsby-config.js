@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Bram writes`,
+    title: `Hey, I'm Bram 👋`,
     author: {
       name: `Bram Pijper`,
       summary: `who lives in Oslo, works in web development, writes about technology and health and enjoys life.`,
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-prismjs`,
     `gatsby-remark-copy-linked-files`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

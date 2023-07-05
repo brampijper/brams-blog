@@ -9,7 +9,7 @@ import "./style.css"
 
 const getData = graphql`
     query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
             edges {
                 node {
                     excerpt
@@ -59,7 +59,6 @@ const FilterableBlogPosts = () => {
             <BlogPostCategories
                 posts={searchInput ? filteredPosts : posts}
             />
-            
         </div>
     )
 }

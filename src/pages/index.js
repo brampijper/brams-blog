@@ -3,18 +3,18 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import FilterableBlogPosts from "../components/blog/FilterableBlogPosts/"
+import BlogPosts from "../components/blog/BlogPosts"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title; 
-  
+  const { title } = data.site.siteMetadata
+
   return (
     <Layout 
       location={location} 
-      title={siteTitle}
+      title={title}
     >
       <Seo title="All posts" />
-      <FilterableBlogPosts />
+      <BlogPosts />
     </Layout>
   )
 }

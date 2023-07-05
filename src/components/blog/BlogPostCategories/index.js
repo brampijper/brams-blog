@@ -4,7 +4,7 @@ import CategoryCard from "../CategoryCard"
 import "./style.css"
 
 const BlogPostCategory = ({posts}) => {
-  const categories = ["technology", "health"];
+  const categories = ["technology & health"];
   
   // const categories = posts.reduce( (acc, {category}) => {    
   //     if (!acc.includes(category)) {
@@ -22,7 +22,7 @@ const BlogPostCategory = ({posts}) => {
   const blogPostCategories = categories.map( category => (
       <CategoryCard 
         category={category}
-        posts={filterPosts(category)}
+        posts={posts}
         key={category}
       />
   ))
