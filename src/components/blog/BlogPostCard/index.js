@@ -1,34 +1,36 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import "./style.css"
-
 export default function BlogPostCard({post}) {
-    const { slug, date, title, excerpt, description } = post;
+    const { slug, title, excerpt, date = null, description } = post;
+
+    let dateElement
+
+    if (date) {
+        dateElement = (
+            <small className="shrink-0">
+                {date}
+            </small>
+        )
+    }
 
     return (
-        <Link className="card-link" to={slug}>
-            <article className="card-content">
-                <header>
-                    <small className="card-date">
-                        {date}
-                    </small>
-                    <h4 className="card-title">
-                        <span itemProp="headline">
-                            {title}
-                        </span>
+        <li className="card-link mb-4 border rounded p-4 hover:bg-gray-100">
+            <Link to={slug}>
+                <div className="flex flex-row">
+                    <h4 className="shrink text-lg md:text-xl font-medium mb-2 w-full text-gray-900" itemProp="headline">
+                        {title}
                     </h4>
-                </header>
+                    {dateElement}
+                </div>
 
-                <section>
-                    <p  className="card-description"
-                        itemProp="description"
-                        dangerouslySetInnerHTML={{
-                            __html: description || excerpt,
-                        }}
-                    />
-                </section>
-            </article>
-        </Link>
+                <p  className="text-gray-600 line-clamp-2"
+                    itemProp="description"
+                    dangerouslySetInnerHTML={{
+                        __html: excerpt || description,
+                    }}
+                />
+            </Link>
+        </li>
     )
 }

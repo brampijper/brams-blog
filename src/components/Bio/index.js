@@ -36,7 +36,11 @@ const Bio = () => {
       <p className="bio-text">
         Written by <strong>{author.name}</strong> {author.summary}
         {` `}
-        <a href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
+        <a 
+          href={`https://github.com/${social.github}`} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
           You should see his projects on Github
         </a>
       </p>

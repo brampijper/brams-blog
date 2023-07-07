@@ -13,11 +13,11 @@
   font-family: var(--font-heading);
 }
 
-.image-wrap {
+/* .image-wrap {
   max-height: var(--maxWidth-xs);
   object-fit: cover;
   border-radius: 1rem;
-}
+} */
 
 .blog-post-nav ul {
   display:flex;

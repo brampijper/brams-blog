@@ -6,7 +6,6 @@ import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import UnsplashCredit from "../components/UnsplashCredit"
-import "./blog-post.css";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -24,7 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={description || post.excerpt}
       />
       <article
-        className="blog-post"
+        className="blog-post prose lg:prose-lg px-8 mt-8"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -38,6 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               image={featuredImg} 
               alt={featuredImage.alt}
               className="image-wrap"
+              fit={"cover"}
             />
             { unsplashName && (
                 <UnsplashCredit 
@@ -105,6 +105,8 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
+                layout: CONSTRAINED
+                height: 600
               )
             }
           }

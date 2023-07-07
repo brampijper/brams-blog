@@ -15,8 +15,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-remark-prismjs`,
-    `gatsby-remark-copy-linked-files`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,6 +40,13 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
@@ -56,13 +61,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Hey, I'm Bram - welcome to my Blog`,
+        short_name: `Bram's Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     {
@@ -123,5 +128,6 @@ module.exports = {
         ],
       }
     },
+    `gatsby-plugin-offline` // Needs to below `gatsby-plugin-feed`
   ],
 }

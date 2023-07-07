@@ -1,42 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
-// import Footer from "./Footer"
-import "./layout.css"
+import { Home } from "react-feather"
+
+import Nav from "../components/Nav"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath; 
-  let header, subtitle;
+  let header
 
   if (isRootPath) {
     header = (
-      <h1 className="font-bold text-5xl">
-        <Link to="/">{title}</Link>
+      <h1 className="font-bold text-3xl md:text-5xl shrink">
+          {title}
       </h1>
-    )
-    subtitle = (
-      <h2 className="">
-      Freelancing, volunteering and traveling enforced my passion for human connections, web development and nature.
-      That passion fuels my work: to connect the digital world and to help people in the physical world 🌏
-      💻 Full stack development.
-      💪🏼 Life long learner: both online and offline.
-      🌄 Relocated to Norway, now living in Oslo.
-      ✏️ I enjoy writing about personal development and coding.
-    </h2>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        Home
-      </Link>
+      <p className="font-extrabold text-xl ml-4 shrink flex flex-row items-center	gap-3">
+        < Home width={18} />
+        {title}
+      </p>
     )
   }
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">
-        {header}
-        {subtitle}
-      </header>
+    <div  data-is-root-path={isRootPath} className="flex flex-col flex-1 min-h-screen max-w-screen-md m-auto pt-8 px-8 md:px-2 md:gap-6 md:divide-y divide-slate-400 font-sans">
+      <nav className="flex flex-row justify-between items-center shrink-0">
+        
+        <Link to="/" title="Home" className="p-2 md:p-4 rounded-md hover:bg-gray-200">
+          {header}
+        </Link>
+        
+        <Nav />
+      </nav>
       <main>
         {children}
       </main>

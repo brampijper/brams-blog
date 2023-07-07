@@ -31,13 +31,17 @@ So, what do you do next? Of course, you'll reach for another piece of chocolate.
 And that's the relentless dopamine cycle in short. (This is only a basic understanding; there are, of course, more factors.) However, there are things you can do to break free from this cycle:
 
 
-- Do a more **challenging activity** to recover faster
-    - Physical exercises: pushups, pullups (or any exercise that is difficult for you).
-    - Cold water exposure: to increase your baseline dopamine levels.
-    - Solve a difficult math problem.
-    - Learn a challenging language for a short amount of time.
-- Use logic to counterbalance the dopamine dip: `I just ate food, I cannot be hungry right now.`
-    - You may feel worse in the short term, but that's better than chasing another lower high and prolonging the dip eventually.
+#### Do a more challenging activity to recover faster
+
+- Physical exercises: pushups, pullups (or any exercise that is difficult for you).
+- Cold water exposure: to increase your baseline dopamine levels.
+- Solve a difficult math problem.
+- Learn a challenging language for a short amount of time.
+
+#### Use logic
+
+- To counterbalance the dopamine dip you could reason that you just ate food, I cannot be hungry right now.
+- You may feel worse in the short term, but that's better than chasing another lower high and prolonging the dip eventually.
 
 > Ever wonder why chocolate is always placed near the checkout registers in stores? 
 > Now you know ;)
@@ -52,7 +56,8 @@ This blog post only covers the basics of how dopamine works. I want to end this 
 Dopamine affects everyone, generally speaking, but it also depends on the dopamine pathways you've developed over the years. Discover your unique pathways by being more mindful and taking note when you're chasing the highs.
 
 
-**Recommended podcast:**
+#### Recommended podcast:
+
 A more science based podcast by the Huberman Lab:
 [Youtube](https://www.youtube.com/watch?v=K-TW2Chpz4k) |
 [Apple](https://podcasts.apple.com/us/podcast/huberman-lab/id1545953110?i=1000606049488) | 
