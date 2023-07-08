@@ -100,9 +100,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }, limit: 1
-              ) {
+              allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1) {
                 nodes {
                   excerpt
                   html
