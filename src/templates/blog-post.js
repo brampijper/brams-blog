@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={description || post.excerpt}
       />
       <article
-        className="blog-post prose lg:prose-lg xl:prose-xl px-8 my-8"
+        className="prose lg:prose-lg xl:prose-xl my-8"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -32,11 +32,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <p>{date}</p>
           </header>
 
-          <section className="blog-post-image">
+          <section>
             <GatsbyImage 
               image={featuredImg} 
               alt={featuredImage.alt}
-              className="image-wrap"
               fit={"cover"}
             />
             { unsplashName && (
@@ -48,19 +47,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </section>
         
           <section
-            className="blog-post-body"
             dangerouslySetInnerHTML={{ __html: post.html }}
             itemProp="articleBody"
           />
 
-        <footer className="footer">
+        <footer>
           <Bio />
         </footer>
 
       </article>
 
-      {/* re-usable omponent? */}
-      <nav className="blog-post-nav">
+      <nav>
         <ul>
           <li>
             {previous && (
