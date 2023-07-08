@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={description || post.excerpt}
       />
       <article
-        className="blog-post prose lg:prose-lg px-8 mt-8"
+        className="blog-post prose lg:prose-lg xl:prose-xl px-8 my-8"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -59,6 +59,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       </article>
 
+      {/* re-usable omponent? */}
       <nav className="blog-post-nav">
         <ul>
           <li>

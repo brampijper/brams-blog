@@ -1,8 +1,8 @@
 import React from "react";
 
-const SubTitle = () => {
+const HeaderSubTitle = () => {
     return (
-        <h2 className="prose lg:prose-lg mb-8 mt-4">
+        <h2 className="prose lg:prose-lg mb-8 mt-4 xl:prose-2xl">
             Freelancing and traveling 🌏 enforced my passion for human connections, web development and🌳.
             This drives my work to connect the digital and physical world to help people.
             I'm a full stack {` `}
@@ -19,4 +19,4 @@ const SubTitle = () => {
     )
 }
 
-export default SubTitle
+export default HeaderSubTitle

@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import SubTitle from "../components/SubTitle"
+import HeaderSubTitle from "../components/HeaderSubTitle"
 import BlogPostCard from "../components/blog/BlogPostCard"
 import formatBlogPosts from "../helpers/formatBlogPosts"
 
@@ -27,7 +27,7 @@ const IndexPage = ({ data, location }) => {
       title={title}
     >
       <Seo title="All posts" />
-      <SubTitle />
+      <HeaderSubTitle />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 

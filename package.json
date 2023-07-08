@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "brams-blog",
   "private": true,
   "description": "A blog about health and technology",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "author": "Bram Pijper <brampijper@proton.me>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

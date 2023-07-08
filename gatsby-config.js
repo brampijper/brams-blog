@@ -3,7 +3,7 @@ module.exports = {
     title: `Hey, I'm Bram 👋`,
     author: {
       name: `Bram Pijper`,
-      summary: `who lives in Oslo, works in web development, writes about technology and health and enjoys life.`,
+      summary: `who lives in Oslo, is in nature often and writes about tech and health.❤️`,
     },
     description: `A blog about technology and health.`,
     siteUrl: `https://focused-galileo-c3ee18.netlify.app/`,
