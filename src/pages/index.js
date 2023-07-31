@@ -6,10 +6,12 @@ import Seo from "../components/seo"
 import HeaderSubTitle from "../components/HeaderSubTitle"
 import BlogPostCard from "../components/blog/BlogPostCard"
 import formatBlogPosts from "../helpers/formatBlogPosts"
+import ProjectCard from "../components/project/ProjectCard"
 
 const IndexPage = ({ data, location }) => {
   const { title } = data.site.siteMetadata
-
+  const { edges } = data.allProjectsJson
+  
   const formattedData = formatBlogPosts(data) // undefined variables.
 
   const blogPostCards = formattedData.map( 
@@ -17,6 +19,14 @@ const IndexPage = ({ data, location }) => {
       <BlogPostCard 
         key={post.slug} 
         post={post} 
+      />
+    )
+  )
+
+  const notableProjects = edges.map( ({node}) => (
+      <ProjectCard
+        key={node.id}
+        project={node}
       />
     )
   )
@@ -38,11 +48,12 @@ const IndexPage = ({ data, location }) => {
           {blogPostCards}
         </ul>
 
-        <section>
-        <h3 className="font-bold text-xl md:text-3xl tracking-tight mb-4 text-black">
+        <ul className="list-none">
+          <h3 className="font-bold text-xl md:text-3xl tracking-tight mb-4 text-black">
             Notable Projects
           </h3>
-        </section>
+          {notableProjects}
+        </ul>
 
       </div>
     </Layout>
@@ -70,6 +81,18 @@ export const pageQuery = graphql`
                   description
               }
           }
+      }
+    }
+    allProjectsJson {
+      edges {
+        node {
+          id
+          title
+          homepage
+          github
+          description
+          tools
+        }
       }
     }
   }
