@@ -13,7 +13,7 @@ There will be a moment in time when you're reflecting on your childhood and wond
 For me, these conversations happened with my parents when my dad was sick. In that period he was fighting cancer for over 3 years, during that time our family grew more intimate, naturally there was more space to talk, reflect and listen to each other. My dad was often reflecting and contemplating to find out why he got sick. That set him on a path of self-discovery, that exposed his weaknesses and strengths.
 
 #### Explore your childhood
-For my dad exploring his childhood was difficult. Both his parents passed away at an early age, so he tried talking to his siblings and family friends. He got some insights, but not much. As he grew up in a family with 10 siblings, there was little space to give him the attention and love he needed. He also hadn't learned to talk about his emotions as his parents never passed that skill to him. In a way, this generational problem was passed on to my brother and me.
+For my dad exploring his childhood was difficult. Both his parents passed away at an early age, so he tried talking to his siblings and family friends. He got some insights, but not much. As he grew up in a family with 10 siblings there was little space to give him the attention and love he needed. He also hadn't learned to talk about his emotions as his parents never passed that skill to him. In a way, this generational problem was passed on to my brother and me.
 
 > If you think you're nothing like your parents you have some work to do!
 
@@ -60,6 +60,6 @@ Now, that I have passed the magical 30 years age border, I have been giving advi
 It's never too late to explore these topics, even at an older age. Or if your parents passed away reach out to family and friends that you have known since childhood. Having insight into these processes can give you valuable feedback on possible mental prisons or unhealthy thought processes that you've developed during your childhood and teenage years.
 
 #### Recommended resources:
-[Sensitivity research](https://sensitivityresearch.com/)
+* A website about research for sensitivity in humans: [Sensitivity research](https://sensitivityresearch.com/)
 
-[The highly sensitive person](https://hsperson.com/)
+* A book & blog about the tools and research to aid more sensitive humans. [The highly sensitive person](https://hsperson.com/)
