@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import extractExcerpt from '../../../helpers/extractExcerpt';
 
 export default function BlogPostCard({post}) {
     const { slug, title, excerpt, date = null, description } = post;
@@ -27,7 +28,7 @@ export default function BlogPostCard({post}) {
                 <p  className="text-gray-600 line-clamp-2"
                     itemProp="description"
                     dangerouslySetInnerHTML={{
-                        __html: excerpt || description,
+                        __html: extractExcerpt(excerpt) || description,
                     }}
                 />
             </Link>
