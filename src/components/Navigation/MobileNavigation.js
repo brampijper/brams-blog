@@ -30,18 +30,6 @@ export default function MobileNavigation() {
                     Github <ExternalLink width={16} />
                 </a>
                 </Menu.Item>
-
-                <Menu.Item>
-                <a 
-                    title="LinkedIn" 
-                    href="https://www.linkedin.com/in/bram-pijper-5389b0276/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="p-2 md:p-4 rounded-md hover:bg-gray-200 flex gap-1"
-                >
-                    LinkedIn <ExternalLink width={16} />
-                </a>
-                </Menu.Item>
             </Menu.DropDown>
         </Menu>
     )
