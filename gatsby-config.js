@@ -6,7 +6,7 @@ module.exports = {
       summary: `who lives in The Netherlands, is in nature often and writes about anything that comes to mind.❤️`,
     },
     description: `A blog about life.`,
-    siteUrl: `https://focused-galileo-c3ee18.netlify.app/`,
+    siteUrl: `https://blog.brampijper.com/`,
     social: {
       github: `brampijper`,
     },
