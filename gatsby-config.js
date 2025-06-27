@@ -95,16 +95,28 @@ module.exports = {
         `,
         feeds: [
           {
+            // Serialize each Markdown node into an RSS feed item
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
+                // build the post URL
+                const postUrl = `${site.siteMetadata.siteUrl}${node.fields.slug}`;
+
+                // Get the featured image public URL, if it exists
+                const imagePublicUrl = node.frontmatter.featuredImage?.src?.publicURL
+                  ? `${site.siteMetadata.siteUrl}${node.frontmatter.featuredImage.src.publicURL}`
+                  : null;
+
+                  // Construct the RSS item
+                return {
+                  title: node.frontmatter.title,
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  url: postUrl,
+                  guid: postUrl,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                  enclosure: imagePublicUrl ? { url: imagePublicUrl } : undefined,
+                };
+              });
             },
             query: `
             {
@@ -118,6 +130,12 @@ module.exports = {
                   frontmatter {
                     title
                     date(formatString: "MMMM DD, YYYY")
+                    featuredImage {
+                      src {
+                        publicURL
+                      }
+                      alt
+                    }
                   }
                 }
               }
@@ -125,10 +143,6 @@ module.exports = {
           `,
             output: "/rss.xml",
             title: "Bram's blog RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
             match: "^/blog/",
           },
         ],
